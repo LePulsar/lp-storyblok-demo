@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	h1, h2, h3, h4, h5, h6 {
+	  @apply font-serif;
+	}
+
+  }
+
+  .dropdown-grow-enter-active,
+  .dropdown-grow-leave-active {
+	transition: all 0.25s ease;
+  }
+  
+  .dropdown-grow-enter-from,
+  .dropdown-grow-leave-to {
+	opacity: 0;
+	transform: scale(.95);
+  }
