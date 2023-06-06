@@ -1,14 +1,20 @@
 module.exports = {
-	content: ['storyblok/**/*.{vue,js}', 'components/**/*.{vue,js}', 'pages/**/*.vue', 'node_modules/flowbite.{js,ts}', 'node_modules/flowbite-vue/**/*.{js,jsx,ts,tsx}'],
-	plugins: [
-		require('flowbite/plugin')
-	  ],
+	content: ['storyblok/**/*.{vue,js}', 'components/**/*.{vue,js}', 'pages/**/*.vue'],
+
 	theme: {
+
+		
+		
 		extend: {
 		  fontFamily: {
 			'sans': ['Lato', 'sans-serif'],
 			'serif': ['Playfair Display', 'serif']
 		  },
+		  colors: {
+			primary: 'rgb(var(--color-primary) / <alpha-value>)',
+      		secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+			},
+		  
 		}
 	  }
   }

@@ -6,9 +6,8 @@ const { locale } = useI18n()
 
 const url = slug && slug.length > 0 ? slug.join('/') : 'home'
 
-//const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+const config = useRuntimeConfig()
 
-const version = 'draft'
 let endpoint = url.replace(/\/$/, '')
 
 if (locale.value !== 'fr') {
@@ -18,7 +17,7 @@ if (locale.value !== 'fr') {
 
 const story = await useAsyncStoryblok(endpoint,
 	{
-	version: version,
+	version: config.public.storyblokVersion,
 	}
 )
 

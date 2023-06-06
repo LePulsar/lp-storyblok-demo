@@ -5,14 +5,16 @@ export default defineNuxtConfig({
 		public: {
 		  baseUrl: process.env.NUXT_BASE_URL,
 		  defaultLanguage: 'fr',
-		  siteName: 'Le Pulsar'
+		  siteName: 'Le Pulsar',
+		  storyblokVersion: process.env.NUX_STORYBLOK_VERSION
 		}
 	  },
 	modules: [
 		'@storyblok/nuxt', 
 		'@nuxtjs/tailwindcss',
 		'@nuxtjs/i18n',
-		'@nuxtjs/google-fonts'
+		'@nuxtjs/google-fonts',
+		'@nuxt/image-edge'
 	],
 	vite: {
 		optimizeDeps: { exclude: ["fsevents"] },
@@ -44,5 +46,10 @@ export default defineNuxtConfig({
 		  Lato: [400, 700],
 		  'Playfair+Display': [700]
 		}
-	  }
+	},
+	image: {
+		storyblok: {
+		  baseURL: 'https://a.storyblok.com'
+		}
+	}
 })
